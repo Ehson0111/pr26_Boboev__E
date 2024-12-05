@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
@@ -36,11 +38,18 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Pr26_Boboev__ETheme {
-                mainscreen()
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(color = Color.White),
+                ) {
+                }
+                mainscreen ()
             }
         }
     }
 }
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun mainscreen() {
@@ -62,10 +71,6 @@ fun mainscreen() {
         colors = androidx.compose.material3.TopAppBarDefaults.topAppBarColors(
             containerColor = androidx.compose.ui.graphics.Color.White // Пример цвета фона
         ),
-
-        modifier = Modifier.shadow(4.dp) // Тень текста
-        ,
-
-
+        modifier = Modifier.shadow(10.dp), // Тень текста
     )
 }
