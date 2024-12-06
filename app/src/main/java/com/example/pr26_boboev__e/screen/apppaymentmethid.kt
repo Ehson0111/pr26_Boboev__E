@@ -1,5 +1,7 @@
 package com.example.pr26_boboev__e.screen
 
+import android.Manifest
+import android.content.pm.PackageManager
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -32,13 +34,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import com.example.pr26_boboev__e.R
 import com.example.pr26_boboev__e.Screen
+import com.google.maps.android.compose.GoogleMap
+import com.google.maps.android.compose.MapProperties
+import com.google.maps.android.compose.MapUiSettings
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -214,15 +221,11 @@ fun addpaymentmethod(navController: NavController) {
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colorResource(R.color.text2), // Цвет фона кнопки
                 ),
+                shape= RoundedCornerShape(0.dp)
 
             ) {
                 Text("Proceed to pay",color=Color.White)
             }
         }
     }
-}
-
-@Composable
-fun trackingpackage(){
-
 }
